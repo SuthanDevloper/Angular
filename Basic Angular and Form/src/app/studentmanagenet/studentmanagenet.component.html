@@ -1,0 +1,25 @@
+<a routerLink="add-student">Add Student</a>
+<table  border=1 width=100% cellspacing=0>
+<tr>
+  <td>s.no</td>
+  <td>firstname</td>
+  <td>lastname</td>
+  <td>email</td>
+  <td>mobile</td>
+  <td colspan="2">action</td>
+
+
+</tr>
+<tr *ngFor=" let stu of students" >
+    <td>{{stu.id}}</td>
+    <td>{{stu.firstname|basictitle:stu.gender}}</td>
+    <td>{{stu.LastName}}</td>
+    <td>{{stu.email}}</td>
+    <td>{{stu.phone}}</td>
+    <td [routerLink]="['/updatestudent',stu.id]"> <a>Edit</a> </td> <!-- step 1  Path for link for updatestudent (1)-->
+    <td (click)="deletestudent(stu.id)">Delete</td>
+</tr>
+
+
+</table>
+

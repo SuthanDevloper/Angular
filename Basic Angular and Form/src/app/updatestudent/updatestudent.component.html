@@ -1,0 +1,32 @@
+<div *ngIf="!exists" class="alert alert-danger">No Record Funded</div>
+<div *ngIf="exists"> 
+<form #studentdata="ngForm" (ngSubmit)="updateStudent(studentdata)">
+  <div class="formgroup">
+<label>FirstName</label>
+<input type="text" class="form-control" name="stufname" ngModel #stufname="ngModel" required [(ngModel)] ="studentInfo.firstname"> 
+<div class="alert alert-danger" *ngIf="studentdata.submitted && stufname.invalid">Please Enter FirstName</div>
+</div>
+
+<div class="formgroup" >
+<label>LasttName</label>
+ <input type="text"  class="form-control" name="stulname" ngModel #stulname="ngModel" required [(ngModel)] ="studentInfo.LastName"> 
+ <div class="alert alert-danger"  *ngIf="studentdata.submitted && stulname.invalid">Please Enter LastName</div>
+</div>
+
+ <div class="formgroup">
+<label>Email</label>
+<input type="text" class="form-control" name="stuemail" ngModel #stuemail="ngModel" required [(ngModel)] ="studentInfo.email">  
+<div class="alert alert-danger"  *ngIf="studentdata.submitted && stuemail.invalid">Please Enter Email</div>
+</div>
+        
+<div class="formgroup">
+<label>PHONE</label>
+<input type="text"  class="form-control"  name="stuphone" ngModel #stuphone="ngModel" required [(ngModel)] ="studentInfo.phone"> 
+<div class="alert alert-danger"  *ngIf="studentdata.submitted && stuphone.invalid">Please Enter phone</div>
+</div> <br>
+<div class="formgroup">
+<button class="btn btn-primary" type="submit">Update Student </button>
+</div>
+
+</form>
+</div>

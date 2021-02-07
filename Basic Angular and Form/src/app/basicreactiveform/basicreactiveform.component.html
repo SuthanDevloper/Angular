@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row justify-content-center" style="margin-top: 20px">
+      <div class="col-7">
+        <div class="jumbotron">
+          <h3>Reactive form custom validation</h3>
+          <div>
+            <form [formGroup] ="form">  <!--import from reactiveform  appmodule.ts-->
+              <div class="form-group">
+              <label for="username">User Name</label>
+              <input type="text" formControlName="username"  class="form-control"> 
+            </div> <!--formControlName="username"  validation-->
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="text" formControlName="password" class="form-control"> 
+            </div>
+            <div class="form-group">
+              <label for="cfnpass">conform password</label>
+              <input type="text" formControlName="cfnpass" class="form-control" > 
+            </div>
+
+            <div class="form-group">
+              <label for="zipcode">Zipcode</label>
+              <input type="text" formControlName="zipcode" class="form-control" > 
+            </div>
+
+            <div class="form-group"> 
+              <button type="submit" class="btn btn-primary" (click)="onsubmit()">Register</button>
+            </div>
+            <hr><hr>
+            <div *ngIf="form.touched"> 
+
+              <span> 
+                  <i class="fa fa-check-circle" style="color: green;" *ngIf="form.controls.username.valid">  </i>
+                  <i class="fa fa-times-circle" style="color: red;" *ngIf="form.controls.username.invalid">  </i>
+                User Name Should be minimum 4 charctor
+              </span>
+
+              <span> 
+                <i class="fa fa-check-circle" style="color: green;" *ngIf="form.controls.cfnpass.valid">  </i>
+                <i class="fa fa-times-circle" style="color: red;" *ngIf="form.controls.cfnpass.invalid">  </i>
+              Passwoed must be Matched
+            </span>
+
+              <span> 
+                <i class="fa fa-check-circle" style="color: green;" *ngIf="form.controls.zipcode.valid">  </i>
+                <i class="fa fa-times-circle" style="color: red;" *ngIf="form.controls.zipcode.invalid">  </i>
+              zipcode Should be minimum 6 charctor Number Only
+            </span>
+
+            </div>
+            </form>
+
+          </div>
+        </div> 
+      </div>
+    </div>
+
+
+
+</div>

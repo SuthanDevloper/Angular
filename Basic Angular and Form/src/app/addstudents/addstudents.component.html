@@ -1,0 +1,30 @@
+<div *ngIf="yesadd">Student Add SuccessFully</div>
+<form #studentdata="ngForm" (ngSubmit)="addStudent(studentdata)">
+  <div class="formgroup">
+<label>FirstName</label>
+<input type="text" class="form-control" name="stufname" ngModel #stufname="ngModel" required> 
+<div class="alert alert-danger" *ngIf="studentdata.submitted && stufname.invalid">Please Enter FirstName</div>
+</div>
+
+<div class="formgroup" >
+<label>LasttName</label>
+ <input type="text"  class="form-control" name="stulname" ngModel #stulname="ngModel" required> 
+ <div class="alert alert-danger"  *ngIf="studentdata.submitted && stulname.invalid">Please Enter LastName</div>
+</div>
+
+ <div class="formgroup">
+<label>Email</label>
+<input type="text" class="form-control" name="stuemail" ngModel #stuemail="ngModel" required>  
+<div class="alert alert-danger"  *ngIf="studentdata.submitted && stuemail.invalid">Please Enter Email</div>
+</div>
+        
+<div class="formgroup">
+<label>PHONE</label>
+<input type="text"  class="form-control"  name="stuphone" ngModel #stuphone="ngModel" required> 
+<div class="alert alert-danger"  *ngIf="studentdata.submitted && stuphone.invalid">Please Enter phone</div>
+</div> <br>
+<div class="formgroup">
+<button class="btn btn-primary" type="submit">AddStudent </button>
+</div>
+
+</form>

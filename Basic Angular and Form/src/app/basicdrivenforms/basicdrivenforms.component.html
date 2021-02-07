@@ -1,0 +1,34 @@
+{{diagnostic}}
+<!--<form #stufrm="ngForm"></form> -->
+    
+  <div>
+    <form #stufrm="ngForm" >  <!--import appmodule.ts-->
+      <div class="form-group">
+      <label for="username">User Name</label>
+      <input type="text" formControlName="username" class="form-control" id ="username"> 
+    </div>
+ 
+<div class="form-group">
+    <label for="">Powers</label>
+    <select name="stupower" class="form-control" id="" ngModel [(ngModel)]="stumodel.power" required>
+    <option [value]="pow" *ngFor ="let pow of  powers">{{pow}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+      <label for="">Alter Ego</label>
+      <input type="text" class="form-control" ngModel [(ngModel)]="stumodel.alterEgo" name="alter" >
+    </div>
+
+    
+    <div class="form-group">
+        <button class="btn btn-success" (click)="onsubmit()" >Submit</button>
+      </div>
+  
+      <span> 
+        <i class="fa fa-check-circle" style="color: green;" *ngIf="form.controls.username.valid">  </i>
+        <i class="fa fa-times-circle" style="color: red;" *ngIf="form.controls.username.invalid">  </i>
+      User Name Should be minimum 4 charctor
+    </span>
+
+</form>
