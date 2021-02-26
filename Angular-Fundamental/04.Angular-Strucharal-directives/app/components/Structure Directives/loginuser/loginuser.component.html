@@ -1,0 +1,13 @@
+<div class="container">
+
+  <div class="row">
+    <button  (click)="login()" *ngIf="!isLogin" class="btn bg-primary">Login</button>
+    <button  (click)="logout()" *ngIf="isLogin" class="btn bg-default">Logout</button>
+  </div>
+    <p *ngIf="!isLogin" class="h2">Welcome Guest</p>
+    <p *ngIf="isLogin"class="h2">Welcome User</p>
+
+</div>
+
+
+
